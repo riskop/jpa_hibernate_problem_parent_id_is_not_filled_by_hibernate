@@ -24,7 +24,7 @@ public class Parent {
     private String job;
     
     @OneToMany(targetEntity = Child.class, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "PARENT_ID", nullable = true)
+    @JoinColumn(name = "PARENT_ID")
     private Set<Child> childs;
 
     public Long getId() {
