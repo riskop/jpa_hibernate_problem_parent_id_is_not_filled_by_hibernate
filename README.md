@@ -1,5 +1,16 @@
 # jpa_hibernate_problem_parent_id_is_not_filled_by_hibernate
 
+If I apply that to Parent:
+
+    @JoinColumn(name = "PARENT_ID", nullable = false)
+    private Set<Child> childs;
+
+Then it starts working!
+
+https://stackoverflow.com/questions/63133393/hibernate-is-inserting-null-value-in-foreign-key-field-when-saving-a-unidirectio
+
+----
+
 I have a unidirectional one to many relationship. The one side is PARENT, the many side is CHILD. For one PARENT there can be many CHILD. But for a CHILD there is exactly one PARENT. On the Java side the relation is unidirectional, I need to access the CHILDS of a PARENT, but I don't want to store the PARENT for CHILDS. So these are the objects:
 
 Parent:
